@@ -1,0 +1,14 @@
+# Generated library catalogs and inventory reports
+/library-catalog.json
+/library-categories.json
+/library-categorized-catalog.csv
+/library-category-summary.csv
+/library-duplicate-hash-report.csv
+/library-file-inventory.csv
+/library-special-collection-candidates.csv
+
+# Local review backup
+/index.before-review-*.html
+
+# Local runtime instrumentation
+/__l5e/
