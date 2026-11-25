@@ -12,3 +12,10 @@
 
 # Local runtime instrumentation
 /__l5e/
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+supabase/.env
+supabase/functions/.env

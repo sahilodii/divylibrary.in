@@ -17,7 +17,7 @@ const css = `
 .auth-row{display:flex;align-items:center;justify-content:flex-end}.auth-switch{border:0;padding:2px 0;background:none;color:#35614a;text-decoration:underline;text-underline-offset:3px;font-size:12px;font-weight:700}
 .auth-submit{min-height:46px;margin-top:3px;border:0;border-radius:7px;background:var(--green);color:white;font-size:14px;font-weight:800}.auth-submit:hover{background:#173b2e}.auth-submit:disabled{opacity:.65;cursor:wait}
 .auth-message{min-height:18px;margin:1px 0 0;color:#376344;font-size:12px;line-height:1.5}.auth-message.error{color:#a33f32}.auth-config-note{margin:18px 0 0;padding:10px 12px;border-radius:7px;background:#f4efe2;color:#726244;font-size:11px;line-height:1.45}.auth-user-email{display:block;overflow-wrap:anywhere;margin:14px 0 20px;color:#69756b;font-size:13px}
-.auth-card:has(.member-dashboard:not([hidden])){width:min(760px,100%)}.member-dashboard{display:grid;gap:18px}.member-overview{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:17px;border:1px solid #e5dfd4;border-radius:12px;background:#f8f5ed}.member-identity{display:flex;align-items:center;gap:12px;min-width:0}.member-avatar{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50% 50% 50% 12px;background:var(--green);color:white;font:700 23px Georgia}.member-identity strong,.member-identity span{display:block;overflow-wrap:anywhere}.member-identity strong{font-size:14px;color:var(--ink)}.member-identity span{margin-top:4px;color:#73796f;font-size:11px}.member-stats{display:flex;gap:10px}.member-stat{min-width:76px;padding:9px 11px;border-radius:9px;background:white;text-align:center}.member-stat strong{display:block;color:var(--green);font:700 21px 'Playfair Display',Georgia}.member-stat span{color:#747a71;font-size:10px}.member-section{min-width:0}.member-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:9px}.member-section h3{margin:0;color:var(--ink);font:600 20px 'Playfair Display',Georgia}.member-section-head span{color:#73796f;font-size:11px}.member-pack-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.member-pack{display:grid;grid-template-columns:58px minmax(0,1fr);align-items:center;gap:11px;min-width:0;padding:9px;border:1px solid #e5dfd4;border-radius:10px;background:#fffefb}.member-pack img{width:58px;height:68px;object-fit:cover;border-radius:5px;background:#e7e1d6}.member-pack-copy{min-width:0}.member-pack-copy strong{display:block;overflow:hidden;color:var(--ink);font:600 14px 'Playfair Display',Georgia;text-overflow:ellipsis;white-space:nowrap}.member-pack-copy span{display:block;margin-top:4px;color:#777d73;font-size:10px}.member-pack-actions{display:flex;gap:10px;margin-top:8px}.member-pack-actions button,.member-browse{border:0;background:none;color:#315e47;padding:0;font-size:10px;font-weight:800;text-decoration:underline;text-underline-offset:2px}.member-pack-actions button.remove{color:#a44d42}.member-empty,.member-loading,.member-error{margin:0;padding:13px;border-radius:9px;background:#f8f5ed;color:#71786f;font-size:12px;line-height:1.5}.member-error{background:#fbefec;color:#a33f32}.member-loading[hidden],.member-error[hidden],.member-empty[hidden]{display:none!important}.member-browse{margin-top:8px}.member-logout{width:100%;margin-top:1px!important}.auth-card .member-dashboard[hidden]{display:none!important}
+.auth-card:has(.member-dashboard:not([hidden])){width:min(760px,100%)}.member-dashboard{display:grid;gap:18px}.member-overview{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:17px;border:1px solid #e5dfd4;border-radius:12px;background:#f8f5ed}.member-identity{display:flex;align-items:center;gap:12px;min-width:0}.member-avatar{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50% 50% 50% 12px;background:var(--green);color:white;font:700 23px Georgia}.member-identity strong,.member-identity span{display:block;overflow-wrap:anywhere}.member-identity strong{font-size:14px;color:var(--ink)}.member-identity span{margin-top:4px;color:#73796f;font-size:11px}.member-stats{display:flex;gap:10px}.member-stat{min-width:76px;padding:9px 11px;border-radius:9px;background:white;text-align:center}.member-stat strong{display:block;color:var(--green);font:700 21px 'Playfair Display',Georgia}.member-stat span{color:#747a71;font-size:10px}.member-section{min-width:0}.member-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:9px}.member-section h3{margin:0;color:var(--ink);font:600 20px 'Playfair Display',Georgia}.member-section-head span{color:#73796f;font-size:11px}.member-pack-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.member-pack{display:grid;grid-template-columns:58px minmax(0,1fr);align-items:center;gap:11px;min-width:0;padding:9px;border:1px solid #e5dfd4;border-radius:10px;background:#fffefb}.member-pack img{width:58px;height:68px;object-fit:cover;border-radius:5px;background:#e7e1d6}.member-pack-copy{min-width:0}.member-pack-copy strong{display:block;overflow:hidden;color:var(--ink);font:600 14px 'Playfair Display',Georgia;text-overflow:ellipsis;white-space:nowrap}.member-pack-copy span{display:block;margin-top:4px;color:#777d73;font-size:10px}.member-pack-actions{display:flex;gap:10px;margin-top:8px}.member-pack-actions button,.member-browse{border:0;background:none;color:#315e47;padding:0;font-size:10px;font-weight:800;text-decoration:underline;text-underline-offset:2px}.member-pack-actions button.remove{color:#a44d42}.member-empty,.member-loading,.member-error{margin:0;padding:13px;border-radius:9px;background:#f8f5ed;color:#71786f;font-size:12px;line-height:1.5}.member-error{background:#fbefec;color:#a33f32}.member-loading[hidden],.member-error[hidden],.member-empty[hidden]{display:none!important}.member-browse{margin-top:8px}.member-logout{width:100%;margin-top:1px!important}.member-access-list,.member-test-list{display:grid;gap:8px}.member-access-item,.member-test-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 13px;border:1px solid #e5dfd4;border-radius:9px;background:#fffefb;font-size:12px}.member-access-item strong,.member-test-item strong{color:var(--green)}.member-access-item span,.member-test-item span{color:#73796f}.member-admin{padding:14px;border:1px solid #decf9f;border-radius:11px;background:#fff9e7}.member-admin h3{margin:0 0 10px;font:600 20px 'Playfair Display',Georgia}.member-admin-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:9px}.member-admin-controls input,.member-admin-controls select{min-width:0;height:36px;border:1px solid #d8d2c7;border-radius:6px;background:#fff;padding:0 7px;font-size:11px}.member-admin button{border:1px solid #d8d2c7;border-radius:6px;background:#fff;padding:7px 9px;color:#315e47;font-size:11px;font-weight:750}.member-admin-stats{color:#566459;font-size:11px;line-height:1.6}.member-admin-output{max-height:230px;overflow:auto;margin-top:8px;font-size:10px;white-space:pre-wrap;overflow-wrap:anywhere}.auth-card .member-dashboard[hidden],.member-admin[hidden]{display:none!important}
 body.auth-open{overflow:hidden}
 @media(max-width:600px){.member-overview{grid-template-columns:1fr}.member-stats{width:100%}.member-stat{flex:1}.member-pack-list{grid-template-columns:1fr}}
 @media(max-width:700px){.tools{gap:7px}.tools .account-trigger{padding:8px 10px;font-size:11px}.auth-card{padding:28px 22px}.auth-card h2{font-size:29px}}
@@ -52,7 +52,7 @@ overlay.innerHTML = `<section class="auth-card" role="dialog" aria-modal="true" 
     <p class="member-loading" hidden>Loading your library…</p>
     <p class="member-error" hidden></p>
     <section class="member-section"><div class="member-section-head"><h3>Saved packs</h3><span class="member-saved-label">Synced to this account</span></div><div class="member-pack-list member-saved-list"></div><p class="member-empty member-saved-empty" hidden>You haven’t saved any packs yet.</p><button class="member-browse member-browse-saved" type="button">Browse the library</button></section>
-    <section class="member-section"><div class="member-section-head"><h3>My purchases</h3><span>Confirmed payments</span></div><div class="member-pack-list member-purchase-list"></div><p class="member-empty member-purchase-empty" hidden>No purchases yet. Confirmed pack purchases will appear here.</p></section>
+    <section class="member-section"><div class="member-section-head"><h3>My purchases</h3><span>Confirmed payments</span></div><div class="member-pack-list member-purchase-list"></div><p class="member-empty member-purchase-empty" hidden>No purchases yet. Confirmed pack purchases will appear here.</p></section><section class="member-section"><div class="member-section-head"><h3>Sandbox access</h3><span>Razorpay test purchases</span></div><div class="member-access-list"></div><p class="member-empty member-access-empty">No test collections unlocked yet.</p></section><section class="member-section"><div class="member-section-head"><h3>Test payment history</h3><span>No real money charged</span></div><div class="member-test-list"></div><p class="member-empty member-test-empty">Your verified test payments will appear here.</p></section><section class="member-admin" hidden><h3>Sandbox admin</h3><div class="member-admin-controls"><input type="date" aria-label="From date"><input type="date" aria-label="To date"><input type="search" placeholder="Customer email or user ID" aria-label="Customer"><select aria-label="Payment status"><option value="">All statuses</option><option>paid</option><option>failed</option><option>attempted</option><option>cancelled</option><option>refunded</option></select><select aria-label="Package"><option value="">All packages</option><option value="history">History</option><option value="mind">Mind</option><option value="money">Money</option><option value="marketing">Marketing</option><option value="spirituality">Spirituality</option><option value="wellness">Wellness</option><option value="hindi">Hindi</option><option value="english">English</option><option value="food">Food</option><option value="kids">Kids</option><option value="relationships">Relationships</option><option value="career">Career</option><option value="complete_library">Complete Library</option></select><select aria-label="Collection"><option value="">Any collection</option><option value="history">History</option><option value="mind">Mind</option><option value="money">Money</option><option value="marketing">Marketing</option><option value="spirituality">Spirituality</option><option value="wellness">Wellness</option><option value="hindi">Hindi</option><option value="english">English</option><option value="food">Food</option><option value="kids">Kids</option><option value="relationships">Relationships</option><option value="career">Career</option></select></div><button type="button" class="member-admin-refresh">Load dashboard</button><button type="button" class="member-admin-reset">Reset sandbox records</button><p class="member-admin-stats" aria-live="polite"></p><div class="member-admin-output"></div></section>
   </div>
   <p class="auth-config-note" hidden>Account sign-in is ready to connect. Add your Supabase project URL and public anon key in <code>auth-config.js</code> to activate accounts.</p>
   <button class="auth-switch auth-mode-switch" type="button">Create an account</button>
@@ -80,7 +80,12 @@ const memberSavedList = overlay.querySelector(".member-saved-list");
 const memberPurchaseList = overlay.querySelector(".member-purchase-list");
 const memberSavedEmpty = overlay.querySelector(".member-saved-empty");
 const memberPurchaseEmpty = overlay.querySelector(".member-purchase-empty");
-let memberData = { userId: null, saved: [], purchases: [], loading: false, error: "" };
+const memberAccessList = overlay.querySelector('.member-access-list');
+const memberAccessEmpty = overlay.querySelector('.member-access-empty');
+const memberTestList = overlay.querySelector('.member-test-list');
+const memberTestEmpty = overlay.querySelector('.member-test-empty');
+const memberAdmin = overlay.querySelector('.member-admin');
+let memberData = { userId: null, saved: [], purchases: [], sandboxAccess: [], sandboxTransactions: [], sandboxOrders: [], loading: false, error: "" };
 let memberLoadPromise = null;
 let memberLoadUserId = null;
 let memberLoadToken = 0;
@@ -158,13 +163,13 @@ async function syncSession(session) {
     memberLoadPromise = null;
     memberLoadUserId = null;
     if (currentUser) {
-      memberData = { userId: currentUser.id, saved: [], purchases: [], loading: true, error: "" };
+      memberData = { userId: currentUser.id, saved: [], purchases: [], sandboxAccess: [], sandboxTransactions: [], sandboxOrders: [], loading: true, error: "" };
       window.DIVY_LIBRARY?.setAccountSavedPacks(currentUser.id, []);
       renderMemberData();
       memberLoadUserId = currentUser.id;
       memberLoadPromise = loadMemberData(currentUser, memberLoadToken);
     } else {
-      memberData = { userId: null, saved: [], purchases: [], loading: false, error: "" };
+      memberData = { userId: null, saved: [], purchases: [], sandboxAccess: [], sandboxTransactions: [], sandboxOrders: [], loading: false, error: "" };
       window.DIVY_LIBRARY?.clearAccountSavedPacks();
       renderMemberData();
     }
@@ -236,6 +241,12 @@ function renderMemberData() {
   memberPurchaseList.replaceChildren(...memberData.purchases.map(item => makeMemberPack(item, true)));
   memberSavedEmpty.hidden = memberData.loading || Boolean(memberData.error) || memberData.saved.length > 0;
   memberPurchaseEmpty.hidden = memberData.loading || Boolean(memberData.error) || memberData.purchases.length > 0;
+  const collectionNames = {history:"History & heritage",mind:"Mind & psychology",money:"Money & business",marketing:"Marketing & growth",spirituality:"Spiritual wisdom",wellness:"Holistic health",hindi:"Hindi reading",english:"English reading",food:"Food & recipes",kids:"Kids & creativity",relationships:"Relationships",career:"Career & curiosity"};
+  memberAccessList.replaceChildren(...memberData.sandboxAccess.map(row => { const item=document.createElement("div");item.className="member-access-item";const copy=document.createElement("div");const name=document.createElement("strong");name.textContent=collectionNames[row.collection_id]||row.collection_id;const source=document.createElement("span");source.textContent=`Verified test access · ${new Date(row.granted_at).toLocaleDateString()}`;copy.append(name,document.createElement("br"),source);item.append(copy);if(typeof row.drive_url==="string"&&/^https:\/\/drive\.google\.com\/drive\/folders\/[A-Za-z0-9_-]+$/.test(row.drive_url)){const link=document.createElement("a");link.href=row.drive_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Open collection";link.style.cssText="flex:none;border-radius:6px;background:var(--green);color:#fff;padding:8px 10px;font-size:11px;font-weight:750;text-decoration:none";link.setAttribute("aria-label",`Open ${collectionNames[row.collection_id]||row.collection_id} collection folder in Google Drive`);item.append(link)}return item; }));
+  memberAccessEmpty.hidden = memberData.loading || memberData.sandboxAccess.length > 0;
+  memberTestList.replaceChildren(...memberData.sandboxTransactions.map(row => {const item=document.createElement("div");item.className="member-test-item";const copy=document.createElement("div");const name=document.createElement("strong");name.textContent=`${row.package_id.replaceAll("_"," ")} · ₹${(Number(row.amount_paise)/100).toFixed(2)}`;const detail=document.createElement("span");detail.textContent=`${row.status} · ${new Date(row.captured_at||row.created_at).toLocaleString()}${row.amount_refunded_paise?` · Refunded ₹${(row.amount_refunded_paise/100).toFixed(2)}`:""}`;copy.append(name,document.createElement("br"),detail);item.append(copy);if(row.status==="captured"){const receipt=document.createElement("button");receipt.type="button";receipt.textContent="Receipt";receipt.addEventListener("click",()=>window.DIVY_PAYMENTS?.downloadReceipt({package_id:row.package_id,amount_paise:row.amount_paise,payment_id:row.razorpay_payment_id,order_id:row.order_id,method:row.method,captured_at:row.captured_at}));item.append(receipt)}return item;}));
+  memberTestEmpty.hidden = memberData.loading || memberData.sandboxTransactions.length > 0;
+  memberAdmin.hidden = currentUser.app_metadata?.role !== "admin";
 }
 
 function readGuestSavedPacks() {
@@ -266,7 +277,13 @@ async function loadMemberData(user, token) {
     if (purchaseResult.error) throw purchaseResult.error;
     if (token !== memberLoadToken || currentUser?.id !== user.id) return;
     localStorage.removeItem("divyLibrarySavedV1");
-    memberData = { userId: user.id, saved: (savedResult.data || []).map(row => row.pack_id), purchases: purchaseResult.data || [], loading: false, error: "" };
+    let sandbox = { access: [], transactions: [], orders: [] };
+    try {
+      const response = await fetch(`${config.url.replace(/\/$/, "")}/functions/v1/razorpay-payment-history`, { method:"POST", headers:{apikey:config.anonKey,Authorization:`Bearer ${(await supabase.auth.getSession()).data.session?.access_token||""}`,"Content-Type":"application/json"}, body:"{}" });
+      if (response.ok) sandbox = await response.json();
+    } catch { /* Test history stays optional until sandbox functions are deployed. */ }
+    if (token !== memberLoadToken || currentUser?.id !== user.id) return;
+    memberData = { userId: user.id, saved: (savedResult.data || []).map(row => row.pack_id), purchases: purchaseResult.data || [], sandboxAccess:sandbox.access||[], sandboxTransactions:(sandbox.transactions||[]).map(tx=>({...tx,order_id:(sandbox.orders||[]).find(order=>order.razorpay_order_id===tx.order_id)?.razorpay_order_id||tx.order_id,package_id:(sandbox.orders||[]).find(order=>order.razorpay_order_id===tx.order_id)?.package_id||"sandbox"})), sandboxOrders:sandbox.orders||[], loading: false, error: "" };
     window.DIVY_LIBRARY?.setAccountSavedPacks(user.id, memberData.saved);
   } catch (error) {
     if (token !== memberLoadToken || currentUser?.id !== user.id) return;
@@ -317,6 +334,58 @@ if (!configured) {
     }
   });
 }
+
+window.DIVY_AUTH = {
+  async getSession() {
+    if (!configured) return null;
+    const { data, error } = await supabase.auth.getSession();
+    if (error) throw error;
+    return data.session;
+  },
+  getUser() { return currentUser; },
+  open,
+  async refreshMemberData() {
+    if (!configured || !currentUser) return;
+    memberLoadToken += 1;
+    memberLoadUserId = currentUser.id;
+    memberLoadPromise = loadMemberData(currentUser, memberLoadToken);
+    await memberLoadPromise;
+  },
+};
+
+const adminOutput = overlay.querySelector(".member-admin-output");
+const adminStats = overlay.querySelector(".member-admin-stats");
+const adminControls = [...overlay.querySelectorAll(".member-admin-controls > *")];
+async function adminCall(payload) {
+  const session = await window.DIVY_AUTH.getSession();
+  const response = await fetch(`${config.url.replace(/\/$/, "")}/functions/v1/razorpay-admin`, { method:"POST", headers:{apikey:config.anonKey,Authorization:`Bearer ${session?.access_token||""}`,"Content-Type":"application/json"}, body:JSON.stringify(payload) });
+  const result = await response.json().catch(()=>({}));
+  if (!response.ok) throw new Error(result.error || "Sandbox admin request failed.");
+  return result;
+}
+overlay.querySelector(".member-admin-refresh").addEventListener("click",async()=>{
+  const [from,to,customer,status,packageId,collectionId]=adminControls;
+  adminStats.textContent="Loading test transactions…";
+  try {
+    const data=await adminCall({action:"dashboard",from:from.value?new Date(`${from.value}T00:00:00`).toISOString():undefined,to:to.value?new Date(`${to.value}T23:59:59`).toISOString():undefined,customer:customer.value.trim()||undefined,status:status.value||undefined,package_id:packageId.value||undefined,collection_id:collectionId.value||undefined});
+    const c=data.counts||{};adminStats.textContent=`${c.total_orders||0} orders · ${c.successful||0} captured · ${c.failed||0} failed · gross test ₹${((c.gross_test_paise||0)/100).toFixed(2)} · refunds ₹${((c.refunds_paise||0)/100).toFixed(2)} · net test ₹${((c.net_test_paise||0)/100).toFixed(2)}`;
+    adminOutput.replaceChildren();
+    for(const order of (data.orders||[]).slice(0,100)) {
+      const line=document.createElement("div");line.className="member-test-item";
+      const info=document.createElement("span");info.textContent=`${new Date(order.created_at).toLocaleString()} · ${order.customer_email||order.user_id} · ${order.package_id} · ₹${(order.amount_paise/100).toFixed(2)} · ${order.status} · ${order.razorpay_order_id}`;line.append(info);
+      const tx=(data.transactions||[]).find(item=>item.order_id===order.id&&item.status==="captured");
+      if(tx){const refund=document.createElement("button");refund.type="button";refund.textContent="Refund test payment";refund.addEventListener("click",async()=>{const remaining=Number(tx.amount_paise)-Number(tx.amount_refunded_paise||0);if(remaining<100)return window.alert("No refundable amount remains.");const entry=window.prompt(`Enter refund amount in rupees (blank = full remaining amount, up to ₹${(remaining/100).toFixed(2)}):`);if(entry===null)return;const amount=entry.trim()?Math.round(Number(entry)*100):undefined;if(amount!==undefined&&(!Number.isFinite(amount)||amount<100||amount>remaining))return window.alert("Enter a valid amount within the remaining refundable balance.");if(!window.confirm("Submit this refund to Razorpay Test Mode?"))return;try{const result=await adminCall({action:"refund",payment_id:tx.razorpay_payment_id,amount_paise:amount});window.alert(`Test refund ${result.status}: ₹${(result.amount_paise/100).toFixed(2)}. No real money is involved.`);overlay.querySelector(".member-admin-refresh").click();await window.DIVY_AUTH.refreshMemberData()}catch(error){window.alert(error.message)}});line.append(refund)}
+      adminOutput.append(line);
+    }
+    const webhook=document.createElement("p");webhook.textContent=`Recent webhook events: ${(data.webhook_events||[]).length}`;adminOutput.append(webhook);
+  } catch(error) { adminStats.textContent=error.message; }
+});
+overlay.querySelector(".member-admin-reset").addEventListener("click",async()=>{
+  if (!window.confirm("Reset all local Razorpay sandbox records? This removes test history and sandbox access records, but does not delete Razorpay-side test records or accounts.")) return;
+  if (window.prompt('Type RESET_TEST_DATA to confirm the sandbox reset:') !== "RESET_TEST_DATA") return;
+  try { await adminCall({action:"reset",confirmation:"RESET_TEST_DATA"});adminStats.textContent="Sandbox records reset. Razorpay-side records are unchanged.";adminOutput.textContent="";await window.DIVY_AUTH.refreshMemberData(); }
+  catch(error) { adminStats.textContent=error.message; }
+});
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
