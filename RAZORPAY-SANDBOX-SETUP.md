@@ -1,6 +1,6 @@
 # Razorpay Test Mode setup
 
-The site is a static HTML/JavaScript page using Supabase Auth. Payment credentials and verification run in Supabase Edge Functions; the Razorpay secret is never sent to the browser. This integration is deliberately locked to Razorpay Test Mode. The website's existing individual collection prices (₹12, ₹15, ₹17 or ₹19) and ₹79 full-access price are retained and enforced by server-side package definitions.
+The site is a static HTML/JavaScript page using Supabase Auth. Payment credentials and verification run in Supabase Edge Functions; the Razorpay secret is never sent to the browser. This integration is deliberately locked to Razorpay Test Mode. The website charges ₹9 per individual collection and ₹29 for full access; these prices are enforced by server-side package definitions.
 
 ## Before using checkout
 
@@ -38,8 +38,8 @@ Use the exact same webhook secret configured above. Subscribe to `payment.author
 
 ## Test packages and checkout
 
-- Every collection has an individual **View pack** dialog and checkout at the exact price shown on its website card (₹12, ₹15, ₹17 or ₹19); a successful captured test payment unlocks only that collection.
-- The existing **Complete Library – 12 Collections** offer is ₹79 and grants all 12 shelf IDs.
+- Every collection has an individual **View pack** dialog and checkout at the exact price shown on its website card (₹9 per collection); a successful captured test payment unlocks only that collection.
+- The existing **Complete Library – 12 Collections** offer is ₹29 and grants all 12 shelf IDs.
 
 The book totals shown on the cards are calculated from the existing website pack data. User selection never supplies the amount: the Edge Function looks up the fixed package amount, creates a Razorpay Order in paise, saves the returned Order ID, and supplies the public Test Key ID to Razorpay Standard Checkout. Checkout signatures are verified server-side, payment details are fetched from Razorpay, and only a captured payment creates sandbox access.
 

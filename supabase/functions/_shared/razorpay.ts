@@ -1,19 +1,19 @@
 import { createClient, type User } from "npm:@supabase/supabase-js@2";
 
 export const PACKAGES = {
-  history:{title:"History & Indian Heritage",amount:1900,currency:"INR",collections:["history"]},
-  mind:{title:"Psychology & Self-Mastery",amount:1700,currency:"INR",collections:["mind"]},
-  money:{title:"Money & Business",amount:1900,currency:"INR",collections:["money"]},
-  marketing:{title:"Marketing & Digital Growth",amount:1900,currency:"INR",collections:["marketing"]},
-  spirituality:{title:"Spiritual Wisdom",amount:1500,currency:"INR",collections:["spirituality"]},
-  wellness:{title:"Holistic Health",amount:1500,currency:"INR",collections:["wellness"]},
-  hindi:{title:"Hindi Reading Vault",amount:1500,currency:"INR",collections:["hindi"]},
-  english:{title:"English Reading Room",amount:1500,currency:"INR",collections:["english"]},
-  food:{title:"Recipe & Food Library",amount:1200,currency:"INR",collections:["food"]},
-  kids:{title:"Kids Learning & Creativity",amount:1200,currency:"INR",collections:["kids"]},
-  relationships:{title:"Relationships & Human Nature",amount:1200,currency:"INR",collections:["relationships"]},
-  career:{title:"Career & Curiosity",amount:1500,currency:"INR",collections:["career"]},
-  complete_library:{title:"Complete Library – 12 Collections",amount:7900,currency:"INR",collections:["history","mind","money","marketing","spirituality","wellness","hindi","english","food","kids","relationships","career"]},
+  history:{title:"History & Indian Heritage",amount:900,currency:"INR",collections:["history"]},
+  mind:{title:"Psychology & Self-Mastery",amount:900,currency:"INR",collections:["mind"]},
+  money:{title:"Money & Business",amount:900,currency:"INR",collections:["money"]},
+  marketing:{title:"Marketing & Digital Growth",amount:900,currency:"INR",collections:["marketing"]},
+  spirituality:{title:"Spiritual Wisdom",amount:900,currency:"INR",collections:["spirituality"]},
+  wellness:{title:"Holistic Health",amount:900,currency:"INR",collections:["wellness"]},
+  hindi:{title:"Hindi Reading Vault",amount:900,currency:"INR",collections:["hindi"]},
+  english:{title:"English Reading Room",amount:900,currency:"INR",collections:["english"]},
+  food:{title:"Recipe & Food Library",amount:900,currency:"INR",collections:["food"]},
+  kids:{title:"Kids Learning & Creativity",amount:900,currency:"INR",collections:["kids"]},
+  relationships:{title:"Relationships & Human Nature",amount:900,currency:"INR",collections:["relationships"]},
+  career:{title:"Career & Curiosity",amount:900,currency:"INR",collections:["career"]},
+  complete_library:{title:"Complete Library – 12 Collections",amount:2900,currency:"INR",collections:["history","mind","money","marketing","spirituality","wellness","hindi","english","food","kids","relationships","career"]},
 } as const;
 
 export type PackageId = keyof typeof PACKAGES;

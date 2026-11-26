@@ -1,18 +1,18 @@
 const config = window.DIVY_AUTH_CONFIG || {};
 const packageCatalog = {
-  history:{title:"History & Indian Heritage",amount:19,description:"Indian classics and cultural reading."},
-  mind:{title:"Psychology & Self-Mastery",amount:17,description:"Personal growth, habits and focus."},
-  money:{title:"Money & Business",amount:19,description:"Finance, investing and business ideas."},
-  marketing:{title:"Marketing & Digital Growth",amount:19,description:"Digital marketing and creator business."},
-  spirituality:{title:"Spiritual Wisdom",amount:15,description:"Spiritual reading and astrology."},
-  wellness:{title:"Holistic Health",amount:15,description:"Yoga, Ayurveda and wellbeing."},
-  hindi:{title:"Hindi Reading Vault",amount:15,description:"Hindi bundles and mixed reading."},
-  english:{title:"English Reading Room",amount:15,description:"Stories, novels and self-help."},
-  food:{title:"Recipe & Food Library",amount:12,description:"Recipes and cooking collections."},
-  kids:{title:"Kids Learning & Creativity",amount:12,description:"Learning, coloring and comics."},
-  relationships:{title:"Relationships & Human Nature",amount:12,description:"Connection and communication."},
-  career:{title:"Career & Curiosity",amount:15,description:"Career, skills and special topics."},
-  complete_library:{title:"Complete Library – 12 Collections",amount:79,description:"One-time access across all 12 curated shelves."},
+  history:{title:"History & Indian Heritage",amount:9,description:"Indian classics and cultural reading."},
+  mind:{title:"Psychology & Self-Mastery",amount:9,description:"Personal growth, habits and focus."},
+  money:{title:"Money & Business",amount:9,description:"Finance, investing and business ideas."},
+  marketing:{title:"Marketing & Digital Growth",amount:9,description:"Digital marketing and creator business."},
+  spirituality:{title:"Spiritual Wisdom",amount:9,description:"Spiritual reading and astrology."},
+  wellness:{title:"Holistic Health",amount:9,description:"Yoga, Ayurveda and wellbeing."},
+  hindi:{title:"Hindi Reading Vault",amount:9,description:"Hindi bundles and mixed reading."},
+  english:{title:"English Reading Room",amount:9,description:"Stories, novels and self-help."},
+  food:{title:"Recipe & Food Library",amount:9,description:"Recipes and cooking collections."},
+  kids:{title:"Kids Learning & Creativity",amount:9,description:"Learning, coloring and comics."},
+  relationships:{title:"Relationships & Human Nature",amount:9,description:"Connection and communication."},
+  career:{title:"Career & Curiosity",amount:9,description:"Career, skills and special topics."},
+  complete_library:{title:"Complete Library – 12 Collections",amount:29,description:"One-time access across all 12 curated shelves."},
 };
 const dialog = document.getElementById("pack-payment-overlay");
 if (!dialog) throw new Error("Pack payment dialog is missing.");
@@ -64,7 +64,7 @@ async function startCheckout(){
   try{await window.loadRazorpay?.()}catch{}
   if(typeof window.Razorpay!=="function"){announce("Razorpay Checkout did not load. Check your connection and reload.","error");return;}
   busy=true;payButton.disabled=true;payButton.textContent="Preparing secure checkout…";announce("Creating a secure Razorpay Test Mode order…");
-  const storageKey=`divySandboxOrderKey:${session.user.id}:${selectedId}`;let idempotencyKey=sessionStorage.getItem(storageKey);if(!idempotencyKey){idempotencyKey=crypto.randomUUID();sessionStorage.setItem(storageKey,idempotencyKey)}
+  const storageKey=`divySandboxOrderKey:v2:${session.user.id}:${selectedId}`;let idempotencyKey=sessionStorage.getItem(storageKey);if(!idempotencyKey){idempotencyKey=crypto.randomUUID();sessionStorage.setItem(storageKey,idempotencyKey)}
   let order;
   try{
     order=await callFunction("razorpay-create-order",{package_id:selectedId,idempotency_key:idempotencyKey},session);
