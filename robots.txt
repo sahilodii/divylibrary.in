@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /supabase/
+Disallow: /__l5e/
+Disallow: /library-
+Disallow: /AUTH-SETUP.md
+Disallow: /RAZORPAY-SANDBOX-SETUP.md
+Sitemap: https://divylibrary.in/sitemap.xml
