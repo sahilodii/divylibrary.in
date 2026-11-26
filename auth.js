@@ -70,6 +70,14 @@ const passwordField = overlay.querySelector(".auth-password");
 const confirmField = overlay.querySelector(".auth-confirm");
 const forgotButton = overlay.querySelector(".auth-row .auth-switch");
 const submit = overlay.querySelector(".auth-submit");
+const pwInput = passwordField.querySelector("input");
+const showBtn = document.createElement("button"); showBtn.type = "button"; showBtn.className = "auth-switch"; showBtn.textContent = "Show password";
+showBtn.onclick = () => { const s = pwInput.type === "password"; pwInput.type = s ? "text" : "password"; showBtn.textContent = s ? "Hide password" : "Show password"; };
+const strength = document.createElement("small"); strength.className = "auth-strength";
+passwordField.append(showBtn, strength);
+pwInput.addEventListener("input", () => { const v = pwInput.value; let s = 0; if (v.length >= 8) s++; if (v.length >= 12) s++; if (/[a-z]/.test(v) && /[A-Z]/.test(v)) s++; if (/\d/.test(v)) s++; if (/[^A-Za-z0-9]/.test(v)) s++; strength.textContent = v ? "Strength: " + ["very weak","weak","fair","good","strong","strong"][s] : ""; });
+const resend = document.createElement("button"); resend.type = "button"; resend.className = "auth-switch"; resend.hidden = true; resend.textContent = "Resend confirmation email"; message.after(resend);
+resend.onclick = async () => { const email = String(new FormData(form).get("email") || "").trim(); if (!email) return; resend.disabled = true; try { const r = await supabase.auth.resend({ type: "signup", email, options: { emailRedirectTo: location.href.split("#")[0] } }); setMessage(r.error ? r.error.message : "Confirmation email sent again.", !!r.error); } catch { setMessage("Couldn’t resend right now. Try again shortly.", true); } resend.disabled = false; };
 const modeSwitch = overlay.querySelector(".auth-mode-switch");
 const userEmail = overlay.querySelector(".auth-user-email");
 const configNote = overlay.querySelector(".auth-config-note");
@@ -227,7 +235,8 @@ function makeMemberPack(item, purchased = false) {
 function renderMemberData() {
   const loggedIn = Boolean(currentUser);
   memberDashboard.hidden = !loggedIn;
-  if (!loggedIn) return;
+  if (!loggedIn) { window.DIVY_LIBRARY?.clearOwnedPacks?.(); return; }
+  window.DIVY_LIBRARY?.setOwnedPacks?.([...memberData.purchases.map(item => item.pack_id), ...memberData.sandboxAccess.map(item => item.collection_id)]);
   const metadataName = currentUser.user_metadata?.display_name?.trim();
   overlay.querySelector(".member-name").textContent = metadataName || currentUser.email || "Your library";
   overlay.querySelector(".member-avatar").textContent = (metadataName || currentUser.email || "D").trim().charAt(0).toUpperCase();
@@ -411,7 +420,7 @@ form.addEventListener("submit", async (event) => {
     let result;
     if (mode === "signup") {
       result = await supabase.auth.signUp({ email, password, options: { data: { display_name: String(data.get("name") || "").trim() }, emailRedirectTo: location.href.split("#")[0] } });
-      if (!result.error) setMessage(result.data.session ? "Your account is ready. You’re signed in." : "Check your email for a confirmation link to finish creating your account.");
+      if (!result.error) setMessage(result.data.session ? "Your account is ready. You’re signed in." : "Check your email for a confirmation link to finish creating your account."); if (!result.error && !result.data.session) resend.hidden = false;
     } else if (mode === "login") {
       result = await supabase.auth.signInWithPassword({ email, password });
       if (!result.error) { setMessage("You’re signed in."); await syncSession(result.data.session); }

@@ -36,7 +36,7 @@ function openPack(id) {
   const item=packageCatalog[id];if(!item)return;
   selectedId=id;lastReceipt=null;actions.hidden=true;actions.querySelector("#pack-payment-receipt").hidden=true;actions.querySelector("#pack-payment-library").hidden=true;actions.querySelector("#pack-payment-retry").hidden=true;status.hidden=true;
   title.textContent=item.title;description.textContent=item.description;
-  count.textContent=`${bookCount(id).toLocaleString()} books in this access`;
+  count.textContent=id==="complete_library"?"All 12 collections included":"One curated collection";const up=document.getElementById("pack-upsell")||document.getElementById("pay-upsell");if(up)up.hidden=id==="complete_library";
   price.textContent=`₹${item.amount} · one time`;
   payButton.textContent=`Pay ₹${item.amount} with Razorpay`;
   dialog.hidden=false;document.body.classList.add("payment-dialog-open");
@@ -61,6 +61,7 @@ async function startCheckout(){
   if(busy||!selectedId)return;
   const item=packageCatalog[selectedId];const session=await getSession();
   if(!session?.access_token){announce("Log in to your Divy Library account to purchase this test pack.","error");window.DIVY_AUTH?.open?.();return;}
+  try{await window.loadRazorpay?.()}catch{}
   if(typeof window.Razorpay!=="function"){announce("Razorpay Checkout did not load. Check your connection and reload.","error");return;}
   busy=true;payButton.disabled=true;payButton.textContent="Preparing secure checkout…";announce("Creating a secure Razorpay Test Mode order…");
   const storageKey=`divySandboxOrderKey:${session.user.id}:${selectedId}`;let idempotencyKey=sessionStorage.getItem(storageKey);if(!idempotencyKey){idempotencyKey=crypto.randomUUID();sessionStorage.setItem(storageKey,idempotencyKey)}
@@ -99,6 +100,7 @@ dialog.querySelector(".pack-payment-close").addEventListener("click",closeDialog
 dialog.addEventListener("click",event=>{if(event.target===dialog)closeDialog();});
 document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!dialog.hidden)closeDialog();});
 payButton.addEventListener("click",startCheckout);
+document.getElementById("pay-upsell")?.addEventListener("click",()=>openPack("complete_library"));
 dialog.querySelector("#pack-payment-retry").addEventListener("click",()=>{actions.hidden=true;startCheckout()});
 dialog.querySelector("#pack-payment-receipt").addEventListener("click",()=>lastReceipt&&downloadReceipt(lastReceipt));
 dialog.querySelector("#pack-payment-library").addEventListener("click",async()=>{await window.DIVY_AUTH?.refreshMemberData?.();closeDialog();window.DIVY_AUTH?.open?.()});
